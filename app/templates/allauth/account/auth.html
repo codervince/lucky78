@@ -1,0 +1,17 @@
+{% extends "app/base.html" %}
+
+{% load i18n %}
+{% load bootstrap3 %}
+{% load account socialaccount %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 big-box">
+    {% block inner-content %}
+    {% endblock %}
+    </div>
+  </div>
+</div><!-- container -->
+{% endblock %}

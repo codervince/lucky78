@@ -1,0 +1,12 @@
+[
+{
+  "fields": {
+    "AUDbalance": "1000.00",
+    "user": 2,
+    "language": "en-us",
+    "GBPbalance": "1000.00"
+  },
+  "model": "app.investor",
+  "pk": 1
+}
+]

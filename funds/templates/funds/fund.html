@@ -1,0 +1,88 @@
+{% extends "app/base.html" %}
+{% load guardian_tags %}
+
+{% block navbar-funds-active %}class=active{% endblock %}
+{% load staticfiles %}
+{% block content %}
+
+
+  <div class="inner">
+    <h1>{{ fund.fundname }}</h1>
+     <div class="row">
+        <div class="col-md-6">
+			The fund began Monday 28th March.<br/>
+			Next turf flat races on Saturday. First report to follow after a sufficient sample of results have been gathered.  
+		</div>
+
+        <div class="fundcomposition" >
+        <div class="chart">
+          <img src="{% static "img/TOP10ACTIVE_ratios.png" %}" class="img-responsive text-center" style="width:50%;">
+		</div>
+       	
+        <div class="2016" >
+            For the latest results please check back soon
+        </div>
+        <div class="pastperformance">
+            <div class="highlights">
+                <p>
+                    The <span class="kw">return on investment (ROI)</span> was <span class="fig">182.60%</span>.  
+                    You would have received 4 dividends in quick succession of amounts
+                    492.5, 346.4, 773.4, 69.4 plus the final balance of 144.30 pro rata.
+                </p>
+                <p>
+                    So a 20% share in the 1000 Fund (200 Units, either AUD or GBP) would have grossed you:<br/> 
+                    0.20 * (492.5+346.4+773.4+69.4+144.30)= 0.20 * 1826 =365.2<br/> 
+                    This gives you the return on investment stated above, excluding fees.
+                    The strike rate was 29%.
+                </p>
+            </div>
+            <div class ="performancestats">
+                <div class="statslist">
+        	<ul>
+        	{% for key, values in statslist.items %}
+        	<li>{{key}} {{ values }}</li>
+	        {% endfor %}
+    		</ul>	
+            </div>
+                <div class="charts">
+                    <div class="chart">
+                          <img src="{% static "img/TOP10ACTIVE_1000_cumbalance_2015.png" %}" class="img-responsive text-center" style="width:50%;">
+                    </div>
+                    <hr/>
+                    <div class="chart">
+                     <img src="{% static "img/TOP10ACTIVE_1000_cumbalance_2014.png" %}" class="img-responsive text-center" style="width:50%;">
+                    </div>
+                    <hr/>
+                    <div class="chart">
+                     <img src="{% static "img/TOP10ACTIVE_1000_cumbalance_2013.png" %}" class="img-responsive text-center" style="width:50%;">
+                    </div>
+                        #LINE CHARTS
+                        #x axis racedates
+                        #y axis: investments, 
+                        ## ???
+                        #x axis racedates? winpattern/placepattern 
+                        ##HISTOGRAM
+                        ##x axis racedates
+                        #y bars dailycashoutbalances, dailybfbalances, bfcumtotalbalances, fstartdaybalances_bfenddaybalances
+                        # cashedoutbalance??
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+         <!-- <div class="text-center col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-sx-12"> -->
+        <div class="fundstatsgeneric"> 
+        
+             {% for key, values in genericstats.items %}
+        	<li>{{key}} {{ values }}</li>
+	        {% endfor %}
+            #managementfee, performancefee, bailoutfee, stakecap, performancethreshold, paysDividends,
+            #nosystems, isLive, livesince,
+
+        </div>    
+    </div> <!-- row -->
+</div> <!-- inner-->
+
+
+
+{% endblock %}

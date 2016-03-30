@@ -1,0 +1,5 @@
+Library dependencies:
+
+pip install django-allauth
+pip install django-bootstrap3
+pip install django-guardian
